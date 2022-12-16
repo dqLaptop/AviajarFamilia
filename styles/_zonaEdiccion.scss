@@ -1,0 +1,111 @@
+@mixin ZonaEdicion($variables){
+    body div.main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto;
+        background-color: map.get($variables,"color-cuaternario");
+        align-items: center;
+        justify-items: center;
+
+        @media (min-width: map.get($variables,"corte-movil")) {
+            grid-template-columns: auto;
+            grid-auto-rows: 1fr;
+        }
+        
+
+        .seccion1 {
+            width: 80vw;
+            display: grid;
+
+            input {
+                width: 30vw;
+                height: 3.5vh;
+                margin-bottom: 20px;
+                justify-self: center;
+            }
+
+            h1 {
+                font-size: 1.2em;
+                color: map.get($variables,"color-terciario");
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-top: 1px solid map.get($variables,"color-primario");
+                border-bottom: 1px solid map.get($variables,"color-primario") ;
+                text-align: center;
+            }
+
+        }
+
+        .seccion2 {
+            width: 80vw;
+
+            .contenido {
+                display: grid;
+                grid-template-columns: 25% 50% 25%;
+                grid-template-areas: "foto camara cubo"
+                    "foto input input";
+                grid-template-rows: auto;
+
+                img.fotoCamara {
+                    grid-area: foto;
+                    width: 15vw;
+                    height: auto;
+                    float: left;
+                }
+
+                img.cubo {
+                    grid-area: cubo;
+                    justify-self: end;
+                }
+
+                img.camara {
+                    grid-area: camara;
+
+                }
+
+                img.camara,
+                img.cubo {
+                    width: 4vw;
+                    height: auto;
+                }
+
+                input {
+                    grid-area: input;
+                    width: 100%;
+                    height: 3.5vh;
+                }
+            }
+
+        }
+
+        .seccion3 {
+            textarea {
+                width: 80vw;
+                height: 8vh;
+            }
+
+            div.add {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                width: 80vw;
+                height: 10vh;
+                background-color:map.get($variables,"color-primario");
+
+                &.add button {
+                    background-color:map.get($variables,"color-terciario");
+                    color: map.get($variables,"color-primario");
+                    border: map.get($variables,"color-terciario") 1px solid;
+                    border-radius: 100%;
+                    width: 40px;
+                    height: 40px;
+
+                    &:hover {
+                        background-color: map.get($variables,"color-primario");
+                        color: map.get($variables,"color-secundario");
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Fmon";
+  src: url("../fuentes/Montserrat-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ftitulo";
+  src: url("../fuentes/AlegreyaSans-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  color: #F8F1F1;
+  font-family: Fmon;
+  background-color: #11698E;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+body .contenido {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: auto;
+  justify-items: center;
+}
+body .contenido h1 {
+  font: 5em Ftitulo;
+  text-align: center;
+  padding-bottom: 80px;
+}
+body .contenido input {
+  margin: 15px;
+  height: 30px;
+  width: 20vw;
+}
+body .contenido button {
+  margin: 20px;
+  height: 5vh;
+  width: 20vw;
+  background-color: #19456B;
+  border-radius: 10px;
+  border: #16C79A 1px solid;
+  color: #16C79A;
+  word-wrap: break-word;
+}
+body .contenido button:hover {
+  color: #F8F1F1;
+  background-color: #16C79A;
+}
+body .contenido button a {
+  text-decoration: none;
+  color: #16C79A;
+}
+body .contenido button a:visited {
+  color: #F8F1F1;
+}/*# sourceMappingURL=index.css.map */

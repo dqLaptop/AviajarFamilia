@@ -1,0 +1,37 @@
+@use "sass:map";
+@import 'reset';
+@import './general','./itinerario','./puntoItinerario','./sugerenciaItinerario','./zonaEdiccion','./seccionEditar';
+
+@font-face {
+    font-family: "Fmon";
+    src: url("../fuentes/Montserrat-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ftitulo";
+    src: url("../fuentes/AlegreyaSans-Light.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$variables:(
+    "fuente":Fmon,
+    "fuenteTitulo":Ftitulo,
+    "color-primario": #F8F1F1,
+    "color-secundario": #11698E,
+    "color-terciario": #19456B,
+    "color-cuaternario": #16C79A,
+    "corte-movil": 400px,
+    "corte-tablet":750px,
+    "corte-ordenador":1024px,
+);
+
+@include general($variables);
+@include itinerario($variables);
+@include PuntoItinerario($variables);
+@include ZonaEdicion($variables);
+@include SeccionEditar($variables);
+@include sugerenciaItinerario($variables);
+

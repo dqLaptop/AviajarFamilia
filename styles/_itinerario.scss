@@ -1,0 +1,95 @@
+@mixin itinerario($variables){
+    .body div.itinerario {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas:
+            "tarjeta";
+        background-color: map.get($variables,"color-cuaternario");
+
+        & .tarjeta {
+            padding: 10px;
+        }
+
+        & .tarjeta .img {
+            float: left;
+            height: 10em;
+            width: 10em;
+            margin-left: 10px;
+        }
+
+        & .tarjeta .titulo {
+            font: 2em Ftitulo;
+            color: map.get($variables,"color-primario");
+        }
+
+        & .tarjeta .descripcion {
+            color: map.get($variables,"color-secundario");
+        }
+
+        @media (min-width: map.get($variables,"corte-movil")) {
+            grid-template-columns: auto auto;
+            grid-template-areas:
+                "tarjeta tarjeta";
+            grid-template-rows: 8em;
+
+            .ciudad {
+                display: grid;
+                grid-column: 1/3;
+
+                h1 {
+                    font: 3em Ftitulo;
+                    color: map.get($variables,"color-primario");
+                    text-align: center;
+                    padding: 20px;
+                }
+            }
+        }
+
+        .ciudad {
+            display: grid;
+            grid-template-rows: 5em;
+
+            h1 {
+                font: 3em Ftitulo;
+                color: map.get($variables,"color-primario");
+                text-align: center;
+            }
+        }
+
+        &.tarjeta {
+            grid-area: tarjeta;
+        }
+
+        & .tarjeta .img {
+            float: left;
+            height: 10em;
+            width: 10em;
+            margin-left: 10px;
+        }
+
+        & .tarjeta .titulo {
+            font: 2em Ftitulo;
+            color: map.get($variables,"color-primario");
+            padding-left: 15px;
+        }
+
+        & .tarjeta .descripcion {
+            color: map.get($variables,"color-secundario");
+            padding-left: 15px;
+        }
+
+
+    }
+
+    .footerA {
+        grid-area: footer;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        width: 100vw;
+        bottom: 0;
+        background-color: map.get($variables,"color-terciario");
+    }
+}

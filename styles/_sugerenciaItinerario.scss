@@ -1,0 +1,93 @@
+@mixin sugerenciaItinerario($variables){
+    body div.sugerencia {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: 1fr 1fr;
+        background-color: map.get($variables,"color-cuaternario");
+
+        @media (min-width: map.get($variables,"corte-movil")) {
+            grid-template-columns: auto auto auto;
+            grid-auto-rows: 1fr;
+        }
+
+        & .tarjeta {
+            padding: 40px;
+            grid-template-columns: auto auto;
+            display: grid;
+            grid-template-areas:
+                "imagen estrellas"
+                "itinerario itinerario"
+                "autor autor"
+            ;
+
+            & .img {
+                grid-area: imagen;
+                height: 10em;
+                width: 10em;
+                justify-self: end;
+            }
+
+            .divEstrella {
+                grid-area: estrellas;
+                display: grid;
+                flex-direction: column-reverse;
+            }
+
+            & .titulo {
+                grid-area: itinerario;
+                justify-self: center;
+                font: 2em Ftitulo;
+                color: map.get($variables,"color-primario");
+            }
+
+            & .autor {
+                justify-self: center;
+                grid-area: autor;
+                color: map.get($variables,"color-primario");
+            }
+        }
+
+
+    }
+
+    .footer {
+        grid-area: footer;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        background-color: map.get($variables,"color-cuaternario");
+
+        & .paginacion {
+            margin: 20px 0;
+
+            & ul {
+                list-style: none;
+                text-align: center;
+
+                & li {
+                    display: inline-block;
+                    margin-right: 10px;
+
+                    & a {
+                        display: block;
+                        padding: 10px 20px;
+                        color: map.get($variables,"color-terciario");
+                        background: map.get($variables,"color-cuaternario");
+                        text-decoration: none;
+                    }
+
+                    & a:hover {
+                        background: map.get($variables,"color-primario");
+                    }
+
+                    & .active {
+                        background: map.get($variables,"color-secundario");
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+    }
+}

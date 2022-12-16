@@ -1,0 +1,81 @@
+@mixin PuntoItinerario($variables) {
+    body div.punto {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: 1fr 1fr;
+        background-color: map.get($variables,"color-cuaternario");
+
+        @media (min-width: map.get($variables,"corte-movil")) {
+            grid-template-columns: auto auto;
+            grid-auto-rows: 1fr;
+        }
+
+        & .tarjeta {
+            padding: 40px;
+
+            & .img {
+                float: left;
+                height: 25em;
+                width: 25em;
+                padding-right: 15px;
+            }
+
+
+            & .titulo {
+                font: 2em Ftitulo;
+                color: map.get($variables,"color-primario");
+            }
+
+            & .descripcion {
+                color: map.get($variables,"color-secundario") ;
+
+            }
+        }
+
+        & .comentarios {
+            padding: 40px;
+
+            & .opinion {
+                padding-top: 25px;
+                padding-bottom: 20px;
+                border-left:  map.get($variables,"color-primario") solid 2px;
+                border-bottom:  map.get($variables,"color-primario") solid 2px;
+            }
+
+            & .opinion .Tit {
+                font: 1.5em Ftitulo;
+                color:  map.get($variables,"color-primario");
+                text-align: center;
+            }
+
+            & .opinion .coment {
+                color:  map.get($variables,"color-secundario");
+                padding-left: 15px;
+            }
+
+            & .add {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-top: 40px;
+                padding-bottom: 20px;
+                border-left:  map.get($variables,"color-primario") solid 2px;
+            }
+
+            & .add button {
+                background-color:map.get($variables,"color-secundario") ;
+                color:  map.get($variables,"color-primario");
+                border:  map.get($variables,"color-terciario") 1px solid;
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
+
+                &:hover {
+                    background-color:  map.get($variables,"color-primario");
+                    color:  map.get($variables,"color-secundario");
+                }
+            }
+        }
+    }
+}

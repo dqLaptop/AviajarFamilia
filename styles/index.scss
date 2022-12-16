@@ -1,0 +1,78 @@
+@import 'reset';
+
+@font-face {
+    font-family: "Fmon";
+    src: url("../fuentes/Montserrat-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ftitulo";
+    src: url("../fuentes/AlegreyaSans-Light.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$color-primario: #F8F1F1;
+$color-secundario: #11698E;
+$color-terciario: #19456B;
+$color-cuaternario: #16C79A;
+$corte-movil: 540px;
+
+body {
+    color: $color-primario;
+    font-family: Fmon;
+    background-color: $color-secundario;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+
+    .contenido {
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: auto;
+        justify-items: center;
+
+        h1 {
+            font: 5em Ftitulo;
+            text-align: center;
+            padding-bottom: 80px;
+        }
+
+        input {
+            margin: 15px;
+            height: 30px;
+            width: 20vw;
+        }
+
+        button {
+            margin: 20px;
+            height: 5vh;
+            width: 20vw;
+            background-color: $color-terciario;
+            border-radius: 10px;
+            border: $color-cuaternario 1px solid;
+            color: $color-cuaternario;
+            word-wrap: break-word;
+
+            &:hover {
+                color: $color-primario;
+                background-color: $color-cuaternario;
+            }
+
+            & a {
+                text-decoration: none;
+                color: $color-cuaternario;
+
+                &:visited {
+                    color: $color-primario;
+                }
+            }
+        }
+
+    }
+}

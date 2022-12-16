@@ -1,0 +1,296 @@
+@mixin general($variables) {
+    body {
+        font-family: map.get($variables, "fuente");
+        display: grid;
+
+        grid-template-columns: auto;
+        grid-template-areas:
+            'cabecera '
+            'main';
+        grid-auto-rows: 1fr 10fr;
+
+        @media (min-width: map.get($variables, "corte-movil")) {
+            grid-template-columns: repeat(4, 25%);
+            grid-template-areas:
+                "cabecera cabecera cabecera cabecera"
+                "main main main main";
+            grid-auto-rows: 1fr 8fr;
+        }
+
+        background-color: map.get($variables, "color-primario");
+        height: 100vh;
+
+        .header {
+            grid-area: cabecera;
+            display: grid;
+            grid-template-rows: 1fr;
+            background-color: map.get($variables, "color-terciario");
+            padding: 1rem;
+
+            .principal {
+                display: grid;
+                grid-template-columns: auto auto;
+
+
+                .iconos {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    justify-self: start;
+                    align-content: center;
+
+                    h1 {
+                        color: map.get($variables, "color-primario");
+                        font-family: Fmon;
+                        padding-left: 10px;
+                    }
+
+                    img.save {
+                        width: 2em;
+                        height: auto;
+                    }
+
+                    .titulo {
+                        align-self: center;
+                    }
+                }
+
+                .menu {
+                    justify-self: end;
+
+                    .botones {
+                        display: none;
+                    }
+
+                    img.menuHam {
+                        display: block;
+                        justify-self: flex-end;
+                    }
+                }
+
+            }
+
+            .migas {
+                ul.breadcrumb {
+                    list-style: none;
+                }
+
+                ul.breadcrumb li {
+                    display: inline;
+                    font-family: Fmon;
+                    font-size: 15px;
+                    color: map.get($variables, "color-primario")
+                }
+
+                ul.breadcrumb li+li:before {
+                    color: map.get($variables, "color-cuaternario");
+                    content: "/\00a0";
+                }
+
+                ul.breadcrumb li a {
+                    color: map.get($variables, "color-cuaternario");
+                    text-decoration: none;
+                }
+
+                ul.breadcrumb li a:hover {
+                    color: map.get($variables, "color-primario");
+                    text-decoration: underline;
+                }
+            }
+
+            @media (min-width:map.get($variables, "corte-movil")) {
+                .principal .menu {
+                    justify-self: flex-end;
+
+                    .botones {
+                        display: block;
+                    }
+
+                    img.menuHam {
+                        display: none;
+                    }
+
+                    ul {
+                        display: flex;
+                        list-style: none;
+                        text-align: center;
+                        margin: 5px;
+
+                        li {
+                            display: block;
+                            border: 1px solid map.get($variables, "color-cuaternario");
+                            border-radius: 10px;
+                            padding: 10px;
+                            text-align: center;
+                            background-color: map.get($variables, "color-secundario");
+                            margin: 5px;
+
+                            a {
+                                text-decoration: none;
+                                color: map.get($variables, "color-cuaternario");
+                            }
+
+                            a:hover,
+                            :active {
+                                text-decoration: none;
+                                color: map.get($variables, "color-terciario");
+                            }
+                        }
+
+                        li:hover {
+                            background-color: map.get($variables, "color-primario");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //-------------------------------------------------Con footer-----------------------------------------
+    .body {
+        font-family: map.get($variables, "fuente");
+        display: grid;
+
+        grid-template-columns: auto;
+        grid-template-areas:
+            'cabecera '
+            'main'
+            'footer';
+        grid-auto-rows: 1fr 10fr;
+
+        @media (min-width: map.get($variables, "corte-movil")) {
+            grid-template-columns: repeat(4, 25%);
+            grid-template-areas:
+                "cabecera cabecera cabecera cabecera"
+                "main main main main"
+                "footer footer footer footer";
+            grid-auto-rows: 1fr 8fr;
+        }
+
+        background-color: map.get($variables, "color-primario");
+        height: 100vh;
+
+        .header {
+            grid-area: cabecera;
+            display: grid;
+            grid-template-rows: 1fr;
+            background-color: map.get($variables, "color-terciario");
+            padding: 1rem;
+
+            .principal {
+                display: grid;
+                grid-template-columns: auto auto;
+
+
+                .iconos {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    justify-self: start;
+                    align-content: center;
+
+                    h1 {
+                        color: map.get($variables, "color-primario");
+                        font-family: Fmon;
+                        padding-left: 10px;
+                    }
+
+                    img.save {
+                        width: 2em;
+                        height: auto;
+                    }
+
+                    .titulo {
+                        align-self: center;
+                    }
+                }
+
+                .menu {
+                    justify-self: end;
+
+                    .botones {
+                        display: none;
+                    }
+
+                    img.menuHam {
+                        display: block;
+                        justify-self: flex-end;
+                    }
+                }
+
+            }
+
+            .migas {
+                ul.breadcrumb {
+                    list-style: none;
+                }
+
+                ul.breadcrumb li {
+                    display: inline;
+                    font-family: Fmon;
+                    font-size: 15px;
+                    color: map.get($variables, "color-primario")
+                }
+
+                ul.breadcrumb li+li:before {
+                    color: map.get($variables, "color-cuaternario");
+                    content: "/\00a0";
+                }
+
+                ul.breadcrumb li a {
+                    color: map.get($variables, "color-cuaternario");
+                    text-decoration: none;
+                }
+
+                ul.breadcrumb li a:hover {
+                    color: map.get($variables, "color-primario");
+                    text-decoration: underline;
+                }
+            }
+
+            @media (min-width:map.get($variables, "corte-movil")) {
+                .principal .menu {
+                    justify-self: flex-end;
+
+                    .botones {
+                        display: block;
+                    }
+
+                    img.menuHam {
+                        display: none;
+                    }
+
+                    ul {
+                        display: flex;
+                        list-style: none;
+                        text-align: center;
+                        margin: 5px;
+
+                        li {
+                            display: block;
+                            border: 1px solid map.get($variables, "color-cuaternario");
+                            border-radius: 10px;
+                            padding: 10px;
+                            text-align: center;
+                            background-color: map.get($variables, "color-secundario");
+                            margin: 5px;
+
+                            a {
+                                text-decoration: none;
+                                color: map.get($variables, "color-cuaternario");
+                            }
+
+                            a:hover,
+                            :active {
+                                text-decoration: none;
+                                color: map.get($variables, "color-terciario");
+                            }
+                        }
+
+                        li:hover {
+                            background-color: map.get($variables, "color-primario");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
