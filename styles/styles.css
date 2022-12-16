@@ -532,6 +532,49 @@ body div.main .seccion3 div.add.add button:hover {
   color: #11698E;
 }
 
+body div.editar {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: 1fr 1fr;
+  background-color: #16C79A;
+}
+@media (min-width: 400px) {
+  body div.editar {
+    grid-template-columns: auto auto;
+    grid-auto-rows: 1fr;
+  }
+}
+body div.editar .tarjeta {
+  padding: 40px;
+  grid-template-columns: auto auto;
+  grid-auto-rows: 25%;
+  display: grid;
+  grid-template-areas: "imagen edit" "titulo titulo";
+}
+body div.editar .tarjeta .img {
+  grid-area: imagen;
+  height: 10em;
+  width: 10em;
+  justify-self: end;
+  align-self: end;
+}
+body div.editar .tarjeta a {
+  grid-area: edit;
+  display: flex;
+  flex-direction: column-reverse;
+}
+body div.editar .tarjeta a .edit {
+  height: 2em;
+  width: 2em;
+}
+body div.editar .tarjeta .titulo {
+  grid-area: titulo;
+  justify-self: center;
+  font: 2em Ftitulo;
+  color: #F8F1F1;
+}
+
 body div.sugerencia {
   grid-area: main;
   display: grid;
@@ -551,16 +594,24 @@ body div.sugerencia .tarjeta {
   display: grid;
   grid-template-areas: "imagen estrellas" "itinerario itinerario" "autor autor";
 }
-body div.sugerencia .tarjeta .img {
+body div.sugerencia .tarjeta a {
   grid-area: imagen;
+  display: grid;
+  justify-self: end;
+}
+body div.sugerencia .tarjeta a img.img {
+  border: 5px solid #19456B;
   height: 10em;
   width: 10em;
-  justify-self: end;
 }
 body div.sugerencia .tarjeta .divEstrella {
   grid-area: estrellas;
   display: grid;
   flex-direction: column-reverse;
+}
+body div.sugerencia .tarjeta .divEstrella span {
+  font-size: 1.4em;
+  color: #F8F1F1;
 }
 body div.sugerencia .tarjeta .titulo {
   grid-area: itinerario;

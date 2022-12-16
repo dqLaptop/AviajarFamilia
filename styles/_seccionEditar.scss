@@ -1,3 +1,50 @@
-@mixin SeccionEditar($variables){
-    
+@mixin SeccionEditar($variables) {
+    body div.editar {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: 1fr 1fr;
+        background-color: map.get($variables, "color-cuaternario");
+
+        @media (min-width: map.get($variables, "corte-movil")) {
+            grid-template-columns: auto auto;
+            grid-auto-rows: 1fr;
+        }
+
+        & .tarjeta {
+            padding: 40px;
+            grid-template-columns: auto auto;
+            grid-auto-rows: 25%;
+            display: grid;
+            grid-template-areas:
+                "imagen edit"
+                "titulo titulo";
+
+            & .img {
+                grid-area: imagen;
+                height: 10em;
+                width: 10em;
+                justify-self: end;
+                align-self: end;
+            }
+
+            a {
+                grid-area: edit;
+                display: flex;
+                flex-direction: column-reverse;
+                .edit{
+                    height: 2em;
+                    width: 2em;
+                }
+            }
+
+            & .titulo {
+                grid-area: titulo;
+                justify-self: center;
+                font: 2em Ftitulo;
+                color: map.get($variables, "color-primario");
+            }
+
+        }
+    }
 }
