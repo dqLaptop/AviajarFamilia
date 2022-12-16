@@ -246,7 +246,7 @@
                 }
             }
 
-            @media (min-width:map.get($variables, "corte-movil")) {
+            @media (min-width:map.get($variables, "corte-tablet")) {
                 .principal .menu {
                     justify-self: flex-end;
 
